@@ -169,80 +169,39 @@ span{
   display: none;
 }
 
-/* responsive navBar*/
-@media (max-width : 992px){
-  .header{
-    padding: 1.3rem 5%;
-  }
-}
-@media (max-width : 760px){
-  .menu{
-    display: inline-flex;
-  }
-  #check:checked~.menu #icon-menu{
-    display: none;
-  }
-  .menu #close-menu{
-    display: none;
-  }
-  #check:checked~.menu #close-menu{
-    display: flex;  
-}
-
-  .navbar{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: rgb(225, 225, 225, .15);
-    backdrop-filter: blur(50px);
-    overflow: hidden;
-    transition: .2s ease;
-  }
-  #check:checked~.navbar{
-    height: 17.7rem;
-  }
-  .navbar a{
-    display: block;
-    font-size: 1rem;
-    margin: 1.5rem 0;
-    text-align: center;
-    transform: translateY(-50px);
-    transition: .2s ease;
-  }
-  #check:checked~.navbar a{
-    transform: translateY(0);
-  }
-}
-
 /* Introduction */
 
-section{
+section {
   padding: 180px  9% 90px;
+  position: relative; /* Ajout pour le positionnement relatif de la section */
 }
 
-.container{
+.container {
   display: flex;
 }
-.hero{
+
+.hero {
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.Me{
-  position: relative;
+
+.Me {
+  position: absolute; 
+  top: 200px;
+  right: 0;
   margin-right: 120px;
   margin-top: 155px;
-  width: 23%;
-	height: 30%;
+  width: 25%;
+  height: 50%;
   border: 3.5px solid rgb(3, 119, 227);
   border-radius: 20%;
 }
-.main-content{
-  color:white
+
+.main-content {
+  color: white;
 }
 .main-content h3{
   font-size: 1.4rem;
@@ -266,6 +225,7 @@ section{
   max-width: 100%;
   color: #b6b9bf;
   line-height: 30px;
+  margin-top: 10px;
   margin-bottom: 15px;
 }
 .medsos{
@@ -324,7 +284,8 @@ section{
 
 #skills {
   padding: 20px 15px 75px 15px;
-  color: #fff;
+  color: white;
+  margin-top: 80px;
 }
 .skill-subtitile{
   text-align: center;
@@ -395,4 +356,188 @@ section{
   left: 0;
   position: absolute;
   width: 110%;
+}
+
+/* Contact */
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100vh;
+}
+
+.container-item {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px; 
+  height: 200px;
+  box-shadow: 0 0 20px rgb(3, 119, 227);
+}
+.item{
+  font-size: 18px;
+  color: #999797;
+  text-decoration: underline;
+}
+.title-item {
+  display: inline-block;
+  position: relative;
+  margin: 0 40px 40px 40px;
+}
+.icon-item{
+  width: 50px; 
+  height: 50px;
+  margin: 10px;
+}
+
+.title-item:before {
+  background-color: #7d84ff;
+  bottom: -15px;
+  content: '';
+  height: 7px;
+  left: 0;
+  position: absolute;
+  width: 110%;
+}
+
+/* responsive */
+/* ... (votre code existant) ... */
+
+/* responsive navBar */
+@media (max-width: 992px) {
+  .header {
+    padding: 1rem;
+  }
+  .me{
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .menu {
+    display: inline-flex;
+  }
+
+  #check:checked~.menu #icon-menu {
+    display: none;
+  }
+
+  .menu #close-menu {
+    display: none;
+  }
+
+  #check:checked~.menu #close-menu {
+    display: flex;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgb(0, 0, 63);
+    backdrop-filter: blur(50px);
+    overflow: hidden;
+    transition: .2s ease;
+  }
+
+  #check:checked~.navbar {
+    height: 17.7rem;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    transition: .2s ease;
+  }
+
+  #check:checked~.navbar a {
+    transform: translateY(0);
+  }
+
+  /* Introduction */
+  section {
+    padding: 80px 5% 40px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .hero {
+    display: block;
+    margin-top: 125px;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Me {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 30%;
+    border: 3.5px solid rgb(3, 119, 227);
+    border-radius: 20%;
+  }
+  
+
+  .main-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-content h4,
+  .main-content p {
+    width: 100%;
+  }
+
+  .medsos {
+    margin-bottom: 20px;
+  }
+
+  .btn,
+  .btn2 {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  /* SKILLS */
+  #skills {
+    padding: 20px 15px 75px 15px;
+    color: #fff;
+    margin-top: 0px;
+  }
+
+  .skill-subtitile {
+    margin: 20px 5% 0 5%;
+  }
+
+  .skills-title.underline:before {
+    width: 20px;
+  }
+
+  /* Contact */
+  .contact-container {
+    flex-direction: column;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-item {
+    width: 80%;
+    margin: 20px 0;
+  }
 }
