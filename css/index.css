@@ -287,6 +287,10 @@ section {
   color: white;
   margin-top: 80px;
 }
+.skill-first-title{
+  text-align: center;
+  font-size: 4.5rem;
+}
 .skill-subtitile{
   text-align: center;
   margin: 20px 140px 0px 140px;
@@ -548,7 +552,6 @@ section {
     margin: 20px 0;
   }
 }
-
 /* Responsive Design for Phones */
 @media (max-width: 600px) {
   .header {
@@ -561,16 +564,17 @@ section {
   }
 
   .hero {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   .Me {
-    position: absolute;
-    top: 65%;
+    position: relative;
+    top: 0; 
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: 30%;
+    transform: translateX(-50%);
+    width: 70%;
+    margin-top: 20px; /* Adjust margin-top as needed */
+    height: auto;
     border: 3.5px solid rgb(3, 119, 227);
     border-radius: 20%;
   }
@@ -589,6 +593,11 @@ section {
     margin-bottom: 15px;
   }
 
+  .main-btn {
+    display: flex;
+    flex-direction: column;
+  }
+
   .btn,
   .btn2 {
     width: 100%;
@@ -601,13 +610,17 @@ section {
     padding: 15px 10px 50px 10px;
   }
 
-  .skill-subtitile {
+  .skill-subtitle {
     margin: 20px 5% 0 5%;
     font-size: 1rem;
   }
 
   .skills-title.underline:before {
     width: 15px;
+  }
+
+  .skill-first-title {
+    font-size: 2.5rem;
   }
 
   /* Contact */
@@ -624,4 +637,3 @@ section {
     margin: 15px 0;
   }
 }
-
