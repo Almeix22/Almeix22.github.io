@@ -173,7 +173,7 @@ span{
 
 section {
   padding: 180px  9% 90px;
-  position: relative; /* Ajout pour le positionnement relatif de la section */
+  position: relative;
 }
 
 .container {
@@ -189,12 +189,13 @@ section {
 }
 
 .Me {
-  position: absolute; 
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
   right: 0;
-  margin-right: 120px;
-  margin-top: 155px;
-  width: 25%;
-  height: 70%;
+  margin-right: 120px; /* ajustez si nécessaire */
+  width: auto;
+  height: 50%;
   border: 3.5px solid rgb(3, 119, 227);
   border-radius: 20%;
 }
@@ -403,21 +404,17 @@ section {
   position: absolute;
   width: 110%;
 }
-
-/* responsive */
-/* ... (votre code existant) ... */
-
-/* responsive navBar */
-@media (max-width: 992px) {
-  .header {
-    padding: 1rem;
-  }
-  .me{
-    display: none;
+@media (max-width: 1212px) {
+  .Me {
+    position: static;
+    margin-top: 250px; 
+    margin-right: 70px; 
+    transform: none; 
+    height: 300px;
+    width: auto;
   }
 }
-
-@media (max-width: 760px) {
+@media (max-width: 992px) {
   .menu {
     display: inline-flex;
   }
@@ -483,10 +480,10 @@ section {
 
   .Me {
     position: absolute;
-    top: 64%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35%;
+    width: auto;
     height: 30%;
     border: 3.5px solid rgb(3, 119, 227);
     border-radius: 20%;
