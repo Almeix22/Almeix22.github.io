@@ -190,12 +190,11 @@ section {
 
 .Me {
   position: absolute; 
-  top: 200px;
   right: 0;
   margin-right: 120px;
   margin-top: 155px;
   width: 25%;
-  height: 50%;
+  height: 70%;
   border: 3.5px solid rgb(3, 119, 227);
   border-radius: 20%;
 }
@@ -364,7 +363,8 @@ section {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 50px;
 }
 
 .container-item {
