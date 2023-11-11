@@ -414,12 +414,23 @@ section {
     width: auto;
   }
 }
+/* Responsive Design for Tablets */
 @media (max-width: 992px) {
+  .Me {
+    position: static;
+    margin-top: 250px; 
+    margin-right: 70px; 
+    transform: none; 
+    height: 300px;
+    width: auto;
+  }
+
+  /* Hide the desktop menu and show the mobile menu */
   .menu {
     display: inline-flex;
   }
 
-  #check:checked~.menu #icon-menu {
+  #check:checked ~ .menu #icon-menu {
     display: none;
   }
 
@@ -427,7 +438,7 @@ section {
     display: none;
   }
 
-  #check:checked~.menu #close-menu {
+  #check:checked ~ .menu #close-menu {
     display: flex;
   }
 
@@ -443,7 +454,7 @@ section {
     transition: .2s ease;
   }
 
-  #check:checked~.navbar {
+  #check:checked ~ .navbar {
     height: 17.7rem;
   }
 
@@ -456,7 +467,7 @@ section {
     transition: .2s ease;
   }
 
-  #check:checked~.navbar a {
+  #check:checked ~ .navbar a {
     transform: translateY(0);
   }
 
@@ -488,7 +499,6 @@ section {
     border: 3.5px solid rgb(3, 119, 227);
     border-radius: 20%;
   }
-  
 
   .main-content h1 {
     font-size: 2.5rem;
@@ -538,3 +548,80 @@ section {
     margin: 20px 0;
   }
 }
+
+/* Responsive Design for Phones */
+@media (max-width: 600px) {
+  .header {
+    padding: 1rem 5%;
+  }
+
+  .navbar a {
+    font-size: 0.9em;
+    margin-left: 1rem;
+  }
+
+  .hero {
+    margin-top: 80px;
+  }
+
+  .Me {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 30%;
+    border: 3.5px solid rgb(3, 119, 227);
+    border-radius: 20%;
+  }
+
+  .main-content h1 {
+    font-size: 2rem;
+  }
+
+  .main-content h4,
+  .main-content p {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .medsos {
+    margin-bottom: 15px;
+  }
+
+  .btn,
+  .btn2 {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  /* SKILLS */
+  #skills {
+    padding: 15px 10px 50px 10px;
+  }
+
+  .skill-subtitile {
+    margin: 20px 5% 0 5%;
+    font-size: 1rem;
+  }
+
+  .skills-title.underline:before {
+    width: 15px;
+  }
+
+  /* Contact */
+  .contact-container {
+    flex-direction: column;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-item {
+    width: 80%;
+    margin: 15px 0;
+  }
+}
+
