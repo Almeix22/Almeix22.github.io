@@ -5,6 +5,13 @@ body{
   background: -webkit-linear-gradient(to left, #8f94fb, rgb(0, 0, 71));
 }
 
+html,body {
+  scroll-behavior: smooth;
+}
+
+.active{
+  color: orange !important;
+}
 /* Animation reveal */
 [class*="reveal-"]{
   opacity: 0;
@@ -163,7 +170,7 @@ span{
 
 .name{
   font-size: 2rem;
-  color: whitesmoke;
+  color: whitesmoke !important;
   text-decoration: none;
   font-weight: 520;
   transition: .50s ease;
@@ -323,7 +330,7 @@ section {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 
 .service-card {
