@@ -1053,7 +1053,7 @@ p {
 }
 
 /* Responsive Design for Phones */
-@media (max-width: 460px) {
+@media (max-width: 500px) {
   /* Softskill Cards */
   .softskillContainer {
     flex-direction: column;
