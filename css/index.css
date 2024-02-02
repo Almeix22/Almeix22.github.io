@@ -433,19 +433,14 @@ section {
 }
 
 /* Contact */
-
 .contact {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.contact_card {
-  margin-right: 50px;
+  flex-wrap: wrap; 
 }
 
 .contact-container {
-  display: flex;
   flex-direction: column;
 }
 
@@ -718,10 +713,8 @@ p {
   box-shadow: 0 0 20px rgb(3, 119, 227);
 }
 
-/* Responsive Design for Tablets */
 @media (max-width: 1200px) {
 
-  /* Hide the desktop menu and show the mobile menu */
   .menu {
     display: inline-flex;
   }
@@ -824,21 +817,8 @@ p {
     width: 80%;
   }
   /* Contact */
-  .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contact_card {
-    display: inline-flex; 
-    width: auto; 
-    margin-right: 20px; 
-  }
-  
-  .contact__content {
-    width: 80%;
-    margin: 0 auto;
+  .container-item {
+    width: 100%;
   }
 
 /* Services */
@@ -888,7 +868,6 @@ p {
 }
 
 .Contact::before {
-  margin-left: 20px;
   margin-top: 50px;
   width: 100px;
 }
@@ -984,21 +963,16 @@ p {
 
   /* Contact */
   .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; 
   }
 
-  .contact_card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto 20px auto; 
+  .container-item {
+    width: 100%; 
+    margin-bottom: 10px; 
   }
 
   .contact__content {
-    width: 80%;
-    margin: 0 auto;
+    width: 100%; 
   }
 
   /* Portfolio */
