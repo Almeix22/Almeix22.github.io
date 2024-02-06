@@ -392,6 +392,10 @@ section {
   position: relative; 
 }
 
+.service-card:hover{
+  scale: 1.25;
+}
+
 .service-card img {
   width: 100px;
   height: 100px;
@@ -508,20 +512,24 @@ section {
 }
 
 .contact__title {
+  font-size: 1.5rem;
   margin-bottom: 50px;
-  margin-top: 70px;
+  color: rgb(0, 0, 71);
 }
 
 .contact__content {
   width: 50%;
   padding: 20px;
-  color: whitesmoke;
+  color: black;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(3, 119, 227);
 }
 
 .contact__form {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: auto;
 }
 
 .contact__form-div {
@@ -538,8 +546,8 @@ section {
 }
 
 .button {
-  background-color: whitesmoke;
-  color: #7d84ff;
+  background-color: #6066d6;
+  color: whitesmoke;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -550,8 +558,9 @@ section {
 }
 
 .button:hover {
-  background-color: #6066d6;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: #6066d6;
+  box-shadow: 0 0 20px rgb(3, 119, 227);
 }
 
 /* Portfolio */
@@ -589,17 +598,22 @@ section {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 .project__container {
   display: flex;
   flex-direction: column; 
   align-items: center;
   background-color: whitesmoke;
-  max-width: 600px; 
+  max-width: 550px; 
   border-radius: 15px;
   margin: 0 auto;
   box-shadow: 0 0 20px rgb(3, 119, 227);
   margin-top: 50px;
+}
+
+.project__container:hover {
+  scale: 1.1;
 }
 
 .project__image {
@@ -765,6 +779,10 @@ p {
     padding: 10px 5% 40px;
   }
 
+  .Me {
+    margin-top: 80px; 
+  }
+
   .container {
     flex-direction: column;
   }
@@ -868,6 +886,16 @@ p {
 }
 
 .Contact::before {
+  margin-top: 50px;
+  width: 100px;
+}
+
+.Portfolio_title{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.Portfolio_title::before {
   margin-top: 50px;
   width: 100px;
 }
@@ -977,7 +1005,18 @@ p {
 
   /* Portfolio */
   .project__container {
-    width: 90%;
+    width: 80%;
+  }
+   
+  .btn_project {
+    display: flex;  
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 9%;
+    margin-top: 10px;
+    font-size: 14px; 
+    padding: 10px 20px; 
+    width: 80%;
   }
 
   /* Footer */
