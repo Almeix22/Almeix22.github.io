@@ -334,6 +334,7 @@ section {
   font-weight: 600;
   transition: all .50s ease;
   text-decoration: none;
+
 }
 .btn:hover {
   background: transparent;
@@ -821,12 +822,16 @@ p {
   .btn2 {
     width: 100%;
     margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .btn3{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0 !important;
   }
 
   /* Portfolio */
@@ -849,6 +854,10 @@ p {
 .service-card {
   width: 80%;
   margin: 10px 0;
+}
+
+.service-card:hover {
+  scale: none;
 }
 
 .service-card img {
@@ -916,6 +925,7 @@ p {
     height: auto;
     max-width: 300px;
     margin: 0 auto;
+    margin-top: 20px !important;
   }
 
   .Me {
@@ -992,6 +1002,7 @@ p {
   /* Contact */
   .contact {
     flex-direction: column; 
+    margin-bottom: 50px;
   }
 
   .container-item {
@@ -1001,6 +1012,7 @@ p {
 
   .contact__content {
     width: 100%; 
+    margin-top: 50px;
   }
 
   /* Portfolio */
@@ -1028,6 +1040,11 @@ p {
     margin-bottom: 40px;
   }
 }
+
+.project__container{
+  width: 95%;
+}
+
 
 /* Responsive Design for Phones */
 @media (max-width: 460px) {
