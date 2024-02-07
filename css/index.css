@@ -1,12 +1,47 @@
-body{
-  background-color: rgb(0, 0, 71);
+body {
   height: 100%;
   width: 100%;
-  background: -webkit-linear-gradient(to left, #8f94fb, rgb(0, 0, 71));
+  background-image: url("../img/background2.jpg");
+  position: relative;
 }
 
 html,body {
   scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: -1;
+}
+
+.parallax {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  height: 100vh;
+}
+
+.parallax__bg {
+  background-image: url("../img/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: -2; 
+}
+
+.parallax__content {
+  position: relative;
+  z-index: 1;
 }
 
 .active{
@@ -165,7 +200,7 @@ html,body {
   z-index: -1;
 }
 span{
-  color: orange;
+  color: #7d84ff;
 }
 
 .name{
@@ -243,7 +278,7 @@ section {
   position: relative;
   width: 380px;
   height: 500px;
-  border: 3.5px solid rgb(3, 119, 227);
+  box-shadow: 0 0 10px #7d84ff;
   border-radius: 20%;
 }
 
@@ -258,7 +293,7 @@ section {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   display: flex; 
   flex-direction: column; 
   align-items: center; 
@@ -298,20 +333,18 @@ section {
 }
 .medsos{
   margin-top: 35px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .medsos .Icon{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: whitesmoke;
-  border: 3.5px solid rgb(3, 119, 227);
+  width: 50px;
+  height: 50px;
+  color: whitesmoke !important;
   border-radius: 50%;
   backdrop-filter: brightness(88%);
-  font-size: 20px;
   margin-right: 17px;
   box-shadow: 0 0 20px transparent;
   cursor: pointer;
@@ -319,16 +352,16 @@ section {
 }
 .medsos .Icon:hover{
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
 }
 .main-btn {
   margin-top: 35px;
 }
 .btn{
+  font-size: 1.2rem !important;
   padding: 11px 26px;
-  background: rgb(3, 119, 227);
-  color: rgb(5, 9, 31);
-  border: 2px solid rgb(3, 119, 227);
+  background: whitesmoke;
+  color: #7d84ff;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
@@ -337,21 +370,21 @@ section {
 
 }
 .btn:hover {
-  background: transparent;
+  background: #7d84ff;
   color: whitesmoke;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   cursor: pointer;
 }
 .btn2{
-  background: transparent;
+  background: #7d84ff;
   color: whitesmoke;
   margin-left: 15px;
 }
 .btn2:hover{
   cursor: pointer;
-  background: rgb(3, 119, 227);
-  color: rgb(5, 9, 31);
-  box-shadow: 0 0 20px rgb(3, 119, 227) ;
+  background-color: whitesmoke;
+  color: #7d84ff;
+  box-shadow: 0 0 20px #7d84ff ;
 }
 
 .btn3{
@@ -365,7 +398,7 @@ section {
 .btn3:hover{
   background-color: whitesmoke;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   cursor: pointer;
   color: #7d84ff;
 }
@@ -388,7 +421,7 @@ section {
   align-items: center;
   width: 300px;
   height: 300px;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   margin: 10px;
   position: relative; 
 }
@@ -457,7 +490,7 @@ section {
   align-items: center;
   width: 400px;
   height: 200px;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   cursor: pointer;
   margin-bottom: 20px;
 }
@@ -518,13 +551,15 @@ section {
   color: rgb(0, 0, 71);
 }
 
+
+
 .contact__content {
   width: 50%;
   padding: 20px;
   color: black;
   background-color: whitesmoke;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
 }
 
 .contact__form {
@@ -561,7 +596,7 @@ section {
 .button:hover {
   background-color: whitesmoke;
   color: #6066d6;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
 }
 
 /* Portfolio */
@@ -594,7 +629,7 @@ section {
   padding: 20px;
 }
 
-.prtofolio_container{
+.portfolio_container{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -609,7 +644,7 @@ section {
   max-width: 550px; 
   border-radius: 15px;
   margin: 0 auto;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   margin-top: 50px;
 }
 
@@ -661,7 +696,7 @@ article {
 .btn_project:hover {
   background: transparent;
   color: #7d84ff !important;
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
   cursor: pointer;
 }
 
@@ -673,25 +708,10 @@ footer {
   padding: 20px;
   text-align: center;
 }
-.Icon {
-  font-size: 2rem;
-  color: #ffffff;
-  margin-right: 10px;
-}
-
-#linkedin {
-  color: #0a66c2; 
-}
 
 p {
   margin: 0;
   font-size: 14px;
-}
-
-.Icon {
-  font-size: 2rem;
-  color: #ffffff;
-  margin: 0 10px;
 }
 
 .line1, .line2{
@@ -709,23 +729,23 @@ p {
 }
 
 .footer_link .Icon{
+  margin-right: 10px;
+  margin-left: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   color: whitesmoke;
-  border: 3.5px solid rgb(3, 119, 227);
   border-radius: 50%;
   backdrop-filter: brightness(88%);
   font-size: 20px;
-  box-shadow: 0 0 20px transparent;
   cursor: pointer;
   transition: all .50s ease;
 }
 .footer_link .Icon:hover{
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgb(3, 119, 227);
+  box-shadow: 0 0 20px #7d84ff;
 }
 
 @media (max-width: 1200px) {
@@ -752,7 +772,7 @@ p {
     left: 0;
     width: 100%;
     height: 0;
-    background: rgb(0, 0, 63);
+    background: rgba(0, 0, 0, 0.7); 
     backdrop-filter: blur(50px);
     overflow: hidden;
     transition: .2s ease;
@@ -764,7 +784,8 @@ p {
 
   .navbar a {
     display: block;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
     margin: 1.5rem 0;
     text-align: center;
     transform: translateY(-50px);
@@ -815,7 +836,8 @@ p {
   }
 
   .medsos {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 0px !important;
   }
 
   .btn,
