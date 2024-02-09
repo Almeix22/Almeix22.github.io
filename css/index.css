@@ -2,6 +2,8 @@ body {
   height: 100%;
   width: 100%;
   background-image: url("../img/background2.jpg");
+  background-size: cover;
+  background-position: center;
   position: relative;
   margin: 0; 
 }
@@ -29,6 +31,7 @@ body::before {
 .parallax__bg {
   background-image: url("../img/background2.jpg");
   background-size: cover;
+  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
