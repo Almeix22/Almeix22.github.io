@@ -1147,7 +1147,7 @@ p {
 }
 
 /* Responsive pour les petits écrans */
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
 
   .tarifs-title {
     font-size: 2rem;
@@ -1297,7 +1297,7 @@ p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .Portfolio_title {
     font-size: 2rem;
   }
@@ -1455,3 +1455,71 @@ margin-bottom: 20px;}
   font-size: 1rem; /* Adapte l'auteur pour les écrans étroits */
 }
 }
+
+/* Responsive Tablettes : Hauteur <= 768px */
+@media (max-height: 768px) {
+  .scroll-arrow {
+    padding: 8px; /* Réduit la zone cliquable */
+    animation: bounce 2s infinite; /* Allonge légèrement l'animation */
+  }
+
+  .arrow-icon {
+    font-size: 40px; /* Réduction de la taille de la flèche */
+  }
+
+  .myself {
+    flex-direction: row; /* Dispose les éléments en ligne sur les tablettes */
+    gap: 20px; /* Ajoute un espacement entre les éléments */
+  }
+
+  .Me {
+    width: 80%; /* Ajuste la largeur pour mieux s'adapter */
+  }
+  .header {
+    height: 50px;
+  }
+  #check:checked ~ .navbar {
+    top: 50px; /* Sous la barre de navigation */
+  }
+  .logo-image {
+    max-height: 50px; /* Contraint la taille maximale du logo à la hauteur de la barre */
+  }
+}
+
+/* Responsive Smartphones : Hauteur <= 480px */
+@media (max-height: 480px) {
+  .scroll-arrow {
+    padding: 5px; /* Réduit davantage la zone cliquable */
+    animation: bounce 2.5s infinite; /* Animation plus lente */
+    position: relative; /* Permet de positionner la flèche par rapport à l'image */
+    top: -20px; /* Place la flèche au-dessus ou proche de l'image */
+  }
+
+  .arrow-icon {
+    font-size: 30px; /* Taille réduite de la flèche */
+  }
+
+  .myself {
+    flex-direction: column; /* Retour à une disposition en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    gap: 10px; /* Réduit l'espacement entre les éléments */
+  }
+
+  .Me {
+    width: 100%; /* Réduit la largeur de l'image pour mieux s'adapter */
+    max-width: 300px; /* Fixe une largeur maximale */
+    height: auto; /* Garde les proportions de l'image */
+    margin: 0 auto; /* Centre l'image horizontalement */
+  }
+  .header {
+    height: 50px;
+  }
+  #check:checked ~ .navbar {
+    top: 50px; /* Sous la barre de navigation */
+  }
+  .logo-image {
+    max-height: 50px; /* Contraint la taille maximale du logo à la hauteur de la barre */
+  }
+}
+
+
