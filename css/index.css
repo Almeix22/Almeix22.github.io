@@ -339,9 +339,11 @@ span{ color: #ff6f61 ;}
 .about-header h1 {
   font-family: 'Cardo', serif;
   font-size: 2.5rem;
-  font-weight: 700;
   color: #252a3a;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Animation du titre */
+  font-weight: 700;
 }
 
 .about-header p {
@@ -458,7 +460,6 @@ span{ color: #ff6f61 ;}
   font-weight: 700;
   color: #252a3a;
   margin-bottom: 0.5rem;
-  
 }
 
 .services-train {
@@ -742,7 +743,7 @@ span{ color: #ff6f61 ;}
 }
 
 .contact-form button {
-  background-color: #34495e;
+  background-color: #252a3a;
   color: white;
   border: none;
   cursor: pointer;
@@ -1152,10 +1153,6 @@ p {
     font-size: 2rem;
   }
 
-  .tarifs-subtitle {
-    font-size: 1rem;
-  }
-
   .tarifs-grid {
     grid-template-columns: 1fr;
   }
@@ -1301,17 +1298,21 @@ p {
 }
 
 @media (max-width: 768px) {
+  .Portfolio_title {
+    font-size: 2rem;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
   .tarifs-btn_projet {
     font-size: 0.9rem; /* Réduit légèrement la taille de la police */
     padding: 0.4rem 0.8rem; /* Diminue le padding pour les petits écrans */
     margin-top: 10px; /* Ajuste la marge */
   }
   .tarifs-title {
-    font-size: 1.5rem;
-  }
-
-  .tarifs-subtitle {
-    font-size: 0.9rem;
+    font-size: 2rem;
   }
 
   .tarifs-cta {
@@ -1399,7 +1400,7 @@ p {
 }
 
 .contact-title {
-  font-size: 2rem; /* Réduit la taille du titre */
+  font-size: 2rem;
 }
 .about-container {
   padding: 20px 5%;
