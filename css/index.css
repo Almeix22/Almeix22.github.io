@@ -1051,6 +1051,26 @@ span{ color: #ff6f61 ;}
   background: #ff6f61;
 }
 
+.tarifs-btn_projet {
+  display: inline-block; /* Assure que le bouton s'aligne bien sur une ligne */
+  background: #252a3a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center; /* Centre le texte à l'intérieur */
+}
+
+.tarifs-btn_projet:hover {
+  background: #ff6f61;
+}
+
+
 .tarifs-card ul {
   list-style: none;
   padding: 0;
@@ -1281,6 +1301,11 @@ p {
 }
 
 @media (max-width: 768px) {
+  .tarifs-btn_projet {
+    font-size: 0.9rem; /* Réduit légèrement la taille de la police */
+    padding: 0.4rem 0.8rem; /* Diminue le padding pour les petits écrans */
+    margin-top: 10px; /* Ajuste la marge */
+  }
   .tarifs-title {
     font-size: 1.5rem;
   }
@@ -1352,8 +1377,6 @@ p {
 .contact-left,
 .contact-right {
   flex: 1 1 100%; /* Chaque section occupe toute la largeur */
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .contact-map iframe {
@@ -1416,5 +1439,18 @@ margin-bottom: 20px;}
 .stat-item {
   min-width: auto; /* Remove fixed minimum width */
   margin: 0 auto;
+}
+
+.citation-container {
+  padding: 1.5rem; /* Réduit davantage le padding pour les très petits écrans */
+  max-width: 100%; /* Utilise toute la largeur de l'écran */
+}
+
+.citation-text {
+  font-size: 1.2rem; /* Diminue encore la taille pour les téléphones */
+}
+
+.citation-author {
+  font-size: 1rem; /* Adapte l'auteur pour les écrans étroits */
 }
 }
