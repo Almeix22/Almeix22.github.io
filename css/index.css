@@ -281,6 +281,40 @@ span{ color: #ff6f61 ;}
   display: none;
 }
 
+.tarifs-email-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 70%;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.tarifs-email-input.valid {
+  border-color: #4caf50; /* Bordure verte pour un email valide */
+}
+
+.tarifs-email-input.invalid {
+  border-color: #ff6f61; /* Bordure rouge pour un email invalide */
+}
+
+.error-message {
+  color: #ff6f61;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.disabled-card {
+  opacity: 0.5;
+  pointer-events: none; /* Désactive l'interaction */
+}
+
+.tarifs-btn:disabled {
+  background-color: #ddd; /* Couleur de fond grise quand désactivé */
+  color: #aaa; /* Couleur du texte grise */
+}
+
 /* slider */
 .scroll-arrow {
   display: flex;
@@ -330,7 +364,7 @@ span{ color: #ff6f61 ;}
 
 /* About Section */
 .about-container {
-  background-color: #f2f1ee;
+  background-color: #ffffff;
   padding: 50px 9%;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -502,7 +536,7 @@ span{ color: #ff6f61 ;}
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4f6f8;
+  background-color: #ffffff;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -782,7 +816,7 @@ span{ color: #ff6f61 ;}
 .projects {
   padding: 50px 20px;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   margin: 0 auto; /* Centre le conteneur */
   overflow: hidden; /* Cache les éléments qui débordent */
 }
@@ -830,7 +864,7 @@ span{ color: #ff6f61 ;}
   padding: 8px 15px; /* Réduit la taille des boutons */
   border: none;
   border-radius: 5px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   color: #34495e;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -970,7 +1004,7 @@ span{ color: #ff6f61 ;}
   padding: 2rem;
   text-align: center;
   font-family: Arial, sans-serif;
-  background-color: #f2f1ee;
+  background-color: #ffffff;
 }
 
 .tarifs-title {
@@ -1145,6 +1179,142 @@ p {
   transform: scale(1.1);
   box-shadow: 0 0 20px #34495e;
 }
+
+/* Conteneur principal */
+.profile-status {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Statut d'abonnement */
+.profile-status span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-left: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.subscribed {
+  color: #fff;
+  background-color: #4caf50; /* Vert */
+}
+
+.unsubscribed {
+  color: #fff;
+  background-color: #e74c3c; /* Rouge */
+}
+
+.tarifs-description {
+  font-size: 16px;
+  margin-bottom: 20px; /* Augmente l'espace avant la liste */
+}
+
+.tarifs-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tarifs-list li {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  width: 100%; /* Assure un bon centrage */
+}
+
+.tarifs-extra {
+  font-size: 14px;
+  font-style: italic;
+  color: #777;
+  margin-top: 15px; /* Augmente légèrement l'espace au-dessus */
+}
+
+/* Styles généraux pour SuccessPage et CancelPage */
+.success-cancel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  padding: 20px;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Style du titre */
+.success-cancel-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Couleurs spécifiques */
+.success-title {
+  color: #16a34a; /* Vert succès */
+}
+
+.cancel-title {
+  color: #dc2626; /* Rouge annulation */
+}
+
+/* Texte descriptif */
+.success-cancel-text {
+  font-size: 1.2rem;
+  color: #374151;
+  max-width: 600px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Bouton de retour */
+.success-cancel-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.success-button {
+  background-color: #3b82f6; /* Bleu */
+}
+
+.success-button:hover {
+  background-color: #2563eb; /* Bleu foncé */
+}
+
+.cancel-button {
+  background-color: #6b7280; /* Gris */
+}
+
+.cancel-button:hover {
+  background-color: #4b5563; /* Gris foncé */
+}
+
+
 
 /* Responsive pour les petits écrans */
 @media (max-width: 1200px) {
