@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Annulé</title>
+    <style>
+        /* Styles généraux pour SuccessPage et CancelPage */
+        .success-cancel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            padding: 20px;
+        }
+
+        /* Animation d'apparition */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Style du titre */
+        .success-cancel-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Couleurs spécifiques */
+        .cancel-title {
+            color: #dc2626; /* Rouge annulation */
+        }
+
+        /* Texte descriptif */
+        .success-cancel-text {
+            font-size: 1.2rem;
+            color: #374151;
+            max-width: 600px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Bouton de retour */
+        .success-cancel-button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cancel-button {
+            background-color: #6b7280; /* Gris */
+        }
+
+        .cancel-button:hover {
+            background-color: #4b5563; /* Gris foncé */
+        }
+    </style>
+</head>
+<body>
+    <div class="success-cancel-container">
+        <h1 class="success-cancel-title cancel-title">❌ Paiement Annulé</h1>
+        <p class="success-cancel-text">
+            Votre paiement a été annulé. Vous pouvez réessayer à tout moment.
+        </p>
+        <a href="/" class="success-cancel-button cancel-button">Retour à l'accueil</a>
+    </div>
+</body>
+</html>
