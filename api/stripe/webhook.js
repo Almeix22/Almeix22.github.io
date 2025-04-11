@@ -7,7 +7,7 @@ import nodemailer from "nodemailer";
 
 export const config = {
   api: {
-    bodyParser: false, // 🔥 Désactive bodyParser pour Stripe
+    bodyParser: false,
   },
 };
 
@@ -74,6 +74,7 @@ export default async function handler(req, res) {
       const product = lineItems.data[0];
       const productName = product.description || "Produit inconnu";
       const price = (session.amount_total / 100).toFixed(2) + "€";
+      const formattedDate = new Date().toLocaleDateString("fr-FR");
 
       const emailContent = `
         <h2>Merci pour votre achat !</h2>
@@ -82,7 +83,7 @@ export default async function handler(req, res) {
         <ul>
           <li><strong>Produit :</strong> ${productName}</li>
           <li><strong>Prix :</strong> ${price}</li>
-          <li><strong>Date :</strong> ${new Date().toLocaleDateString()}</li>
+          <li><strong>Date :</strong> ${formattedDate}</li>
         </ul>
         <p>Votre abonnement est désormais actif.</p>
         <p>Si vous avez des questions, n'hésitez pas à nous contacter.</p>
@@ -96,7 +97,6 @@ export default async function handler(req, res) {
         html: emailContent,
       });
 
-      // Email admin
       const adminContent = `
         <h2>Nouvel abonnement</h2>
         <p>Un nouvel abonnement a été souscrit.</p>
@@ -104,7 +104,7 @@ export default async function handler(req, res) {
           <li><strong>Client :</strong> ${userEmail}</li>
           <li><strong>Produit :</strong> ${productName}</li>
           <li><strong>Prix :</strong> ${price}</li>
-          <li><strong>Date :</strong> ${new Date().toLocaleDateString()}</li>
+          <li><strong>Date :</strong> ${formattedDate}</li>
         </ul>
       `;
 
