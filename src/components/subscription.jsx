@@ -10,28 +10,28 @@ const Subscription = ({ email }) => {
       duration: "3 MOIS",
       price: "25€ / mois",
       total: "75€",
-      priceId: "price_1R1ZkwRolLGUgdRCGtAnXdYE",
+      priceId: "price_1R1ZYnRolLGUgdRCxDPQKtWu",
       description: "Idéal pour un suivi court-terme, corriger d'éventuels bugs et apporter des modifications mineures.",
     },
     {
       duration: "6 MOIS",
       price: "23€ / mois",
       total: "138€",
-      priceId: "price_1R1ZlYRolLGUgdRCd4Pr1EHK",
+      priceId: "price_1R1ZakRolLGUgdRC4bZvWF0v",
       description: "Un accompagnement semi-annuel pour assurer la sécurité et la mise à jour régulière de votre site.",
     },
     {
       duration: "9 MOIS",
       price: "21€ / mois",
       total: "189€",
-      priceId: "price_1R1Zm7RolLGUgdRCv5Ot4AI8",
+      priceId: "price_1R1ZbnRolLGUgdRCB9Hajtpo",
       description: "Idéal pour un suivi à long terme avec mises à jour périodiques et intégration d'améliorations fonctionnelles.",
     },
     {
       duration: "12 MOIS",
       price: "19€ / mois",
       total: "228€",
-      priceId: "price_1R1ZmlRolLGUgdRC7eQypttr",
+      priceId: "price_1R1ZcnRolLGUgdRCHw2QpwWH",
       description: "Une sérénité totale avec un suivi annuel complet, comprenant toutes les mises à jour nécessaires et un support prioritaire.",
     }
   ];

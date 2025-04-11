@@ -7,7 +7,7 @@ import SuccessPage from "./components/SuccessPage";  // Import de la page de suc
 import CancelPage from "./components/CancelPage";  // Import de la page d'annulation
 
 // Clé publique Stripe (remplace par ta vraie clé)
-const stripePromise = loadStripe("pk_test_51R0po9RolLGUgdRCZT48uVblefAYFAeXjAyMaScOhS4Xio96oSguuXhdqIidkHotG5h18mzpvVuXewcgE3ppOuLQ006Co32l2C");
+const stripePromise = loadStripe("pk_live_51R0po9RolLGUgdRCzGYm8OwhSwhRTCggG1uYGMhIk0gqbtJqd5b7ddEmI1Kk98RnLfRj53NRN6IxR8XhvsvuuyFA00gWtBQPMa");
 
 function App() {
   return (
