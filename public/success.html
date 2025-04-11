@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Réussi</title>
+    <style>
+        /* Styles généraux */
+        .success-cancel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            padding: 20px;
+        }
+
+        /* Animation d'apparition */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Style du titre */
+        .success-cancel-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Couleurs spécifiques */
+        .success-title {
+            color: #16a34a; /* Vert succès */
+        }
+
+        /* Texte descriptif */
+        .success-cancel-text {
+            font-size: 1.2rem;
+            color: #374151;
+            max-width: 600px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Bouton de retour */
+        .success-cancel-button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .success-button {
+            background-color: #3b82f6; /* Bleu */
+        }
+
+        .success-button:hover {
+            background-color: #2563eb; /* Bleu foncé */
+        }
+    </style>
+</head>
+<body>
+    <div class="success-cancel-container">
+        <h1 class="success-cancel-title success-title">✅ Paiement Réussi !</h1>
+        <p class="success-cancel-text">
+            Merci pour votre achat. Votre abonnement est maintenant actif.
+        </p>
+        <a href="/" class="success-cancel-button success-button">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

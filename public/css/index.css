@@ -1,0 +1,1695 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Assure que l'ensemble du contenu prend 100% de la hauteur */
+  width: 100%;  /* La largeur de la page */
+}
+
+body {
+  background-image: url("../img/background2_1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Noir bleuté avec une opacité de 70% */
+  z-index: -1;
+}
+
+.fond {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh; /* Prendre toute la hauteur de l'écran */
+  width: 100%;
+  overflow: hidden; /* Evite le débordement hors de la fenêtre */
+}
+
+.parallax {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  position: relative;
+  height: 100vh;
+}
+
+
+.parallax__bg {
+  background-image: url("../img/background12.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  z-index: -2; 
+}
+
+@media (max-height: 750px) {
+  .parallax__bg {
+    height: 150%;
+  }
+}
+
+.parallax__content {
+  position: relative;
+  z-index: 1;
+}
+
+.active {
+  color: #ff6f61 !important;
+  position: relative;
+  transition: color 0.3s ease; /* Transition sur la couleur */
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff6f61;
+  transition: width 0.3s ease; /* Transition sur la largeur du trait */
+}
+
+
+[class*="reveal-"]{
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal-visible{
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 1s cubic-bezier(0.5,0,0,1);
+}
+
+.reveal-2 { transition-delay: 0.1s; }
+
+.reveal-3 { transition-delay: 0.2s; }
+
+.reveal-4 { transition-delay: 0.3s; }
+
+.circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+
+.circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+
+.circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+
+.circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+
+.circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+
+.circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+
+.circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+
+.circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+
+.circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+
+.circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+@keyframes animate {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+  100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+}
+
+
+/* NavBar */
+
+.navbar {
+  display: flex; /* Utilise Flexbox pour aligner les liens */
+  justify-content: center; /* Centre les liens horizontalement */
+  align-items: center; /* Centre les liens verticalement */
+  flex: 1; /* Permet à la barre de navigation de prendre l'espace restant */
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Espace entre les sections */
+  align-items: center;
+  padding: 1rem 10%;
+  height: 70px;
+  background: rgba(242, 241, 238, 0.9);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.header::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+span{ color: #ff6f61 ;}
+
+
+.navbar a {
+  font-family: 'Cardo', serif; /* Cardo est une police serif, donc on utilise 'serif' comme fallback */
+  font-size: 15px;
+  color: #191818; /* Texte en noir pour un bon contraste */
+  text-decoration: none;
+  font-weight: 800;
+  transition: color 0.3s ease, transform 0.3s ease;  
+  margin-left: 2.5rem;
+  text-transform: uppercase;
+}
+.navbar a:hover {
+  color: #ff6f61 ; /* Bleu profond pour le survol */
+  transform: translateY(-3px); /* Effet de levée */
+}
+
+.navbar a:focus {
+  outline: none; /* Retirer la bordure de focus par défaut */
+  color: #34495e; /* Garder la couleur de survol pour le focus */
+}
+
+#check{display: none;}
+
+.menu{
+  position: absolute;
+  right: 5%;
+  color: #f2f1ee;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.logo-image {
+  max-height: 70px; /* Contraint la taille maximale du logo à la hauteur de la barre */
+  width: auto; /* Conserve les proportions */
+  transition: transform 0.3s ease; /* Ajoute une animation au survol */
+}
+
+.logo-image:hover {
+  transform: scale(1.1); /* Le logo grossit au survol sans affecter la barre */
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem; /* Espacement entre les icônes */
+  align-items: center;
+}
+
+.social-icons a {
+  color: #191818; /* Couleur des icônes */
+  font-size: 1.5rem; /* Taille des icônes */
+  transition: color 0.3s ease, transform 0.3s ease; /* Animation au survol */
+  display: flex; /* Garde les icônes sociales alignées */
+  align-items: center; /* Centre verticalement les icônes */
+  gap: 1rem; /* Espacement entre les icônes */
+}
+
+.social-icons a:hover {
+  color: #ff6f61 ; /* Changement de couleur au survol */
+  transform: scale(1.2); /* Grossissement au survol */
+}
+
+.menu {
+  display: none; /* Caché par défaut */
+}
+
+#check:checked ~ .navbar {
+  display: flex;
+  flex-direction: column; /* Empile les liens */
+  position: absolute;
+  top: 70px; /* Sous la barre de navigation */
+  right: 0;
+  width: 100%; /* Prend toute la largeur */
+  background: rgba(242, 241, 238, 0.95); /* Fond semi-transparent */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  z-index: 100;
+}
+
+#check:checked ~ .menu #icon-menu {
+  display: none;
+}
+
+#check:checked ~ .menu #close-menu {
+  display: block;
+}
+
+.menu #close-menu {
+  display: none;
+}
+
+.tarifs-email-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 70%;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.tarifs-email-input.valid {
+  border-color: #4caf50; /* Bordure verte pour un email valide */
+}
+
+.tarifs-email-input.invalid {
+  border-color: #ff6f61; /* Bordure rouge pour un email invalide */
+}
+
+.error-message {
+  color: #ff6f61;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.disabled-card {
+  opacity: 0.5;
+  pointer-events: none; /* Désactive l'interaction */
+}
+
+.tarifs-btn:disabled {
+  background-color: #ddd; /* Couleur de fond grise quand désactivé */
+  color: #aaa; /* Couleur du texte grise */
+}
+
+/* slider */
+.scroll-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Ajoute une zone cliquable autour de la flèche */
+  border-radius: 50%; /* Donne une forme circulaire à la zone cliquable */
+  background-color: rgba(255, 255, 255, 0); /* Fond transparent */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  animation: bounce 1.5s infinite; /* Animation de rebond */
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement coloré au survol */
+}
+
+.arrow-icon {
+  font-size: 50px; /* Taille de la flèche */
+  color: #fff;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Mouvement vers le bas */
+  }
+  100% {
+    transform: translateY(0); /* Remontée */
+  }
+}
+
+
+.myself {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Me {
+  width: auto;
+  z-index: 1;
+}
+
+/* About Section */
+.about-container {
+  background-color: #ffffff;
+  padding: 50px 9%;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-family: 'Cardo', serif;
+  font-size: 2.5rem;
+  color: #252a3a;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Animation du titre */
+  font-weight: 700;
+}
+
+.about-header p {
+  font-family: 'Cardo', serif;
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 0.7s forwards 0.3s; /* Légèrement plus tard que le titre */
+}
+
+.header-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #ff6f61;
+  margin: 10px auto 20px;
+}
+
+/* Layout for Texts and Image */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.about-text {
+  max-width: 31%;
+  text-align: left;
+}
+
+.about-text h3 {
+  font-family: 'Cardo', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #34495e;
+  margin: 1rem 0;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Center Image Styling */
+.about-image {
+  flex: 0 0 35%; /* Image takes 30% of the width */
+  text-align: center;
+  margin-left: -70px;
+}
+
+.about-image img {
+  width: 100%; /* Full size inside its container */
+  height: auto;
+}
+
+/* Stats Section */
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex; /* Use flexbox for icon and number alignment */
+  flex-direction: column; /* Ensure elements stack vertically */
+  align-items: center; /* Center-align the elements */
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.stat-item h4 {
+  font-size: 2rem; /* Number size */
+  color: #252a3a;
+  margin-top: 10px;
+}
+
+.stat-underline {
+  width: 50px;
+  height: 4px;
+  background-color: #252a3a;
+  margin: 10px 0; /* Proper spacing above and below */
+}
+
+.stat-item p {
+  font-size: 0.9rem; /* Reduced description size */
+  color: #252a3a;
+  margin-top: 5px;
+}
+
+
+
+/* Mes Services */
+.background {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.services-title {
+  font-family: 'Cardo', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #252a3a;
+  margin-bottom: 0.5rem;
+}
+
+.services-train {
+  width: 50px;
+  height: 4px;
+  background-color: #ff6f61 ;
+  margin: 0 auto 20px; /* Le petit train sous le titre */
+}
+
+.services-subtitle {
+  font-family: 'Cardo', serif;
+  font-size: 1.25rem;
+  color: #7f8c8d;
+  margin-bottom: 3rem;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+}
+
+.service-title {
+  font-family: 'Cardo', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #252a3a;
+  margin: 1rem 0;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/*Citation*/
+.citation-container {
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 1rem auto;
+  background-color: transparent; /* Retire le fond */
+}
+
+.citation-text {
+  font-size: 2rem; /* Agrandit le texte de la citation */
+  font-weight: 500;
+  color: #ffffff; /* Met le texte en blanc */
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.citation-author {
+  font-size: 1.5rem;
+  color: #ffffff; /* Met l'auteur en blanc également */
+  font-weight: 600;
+}
+
+/* Workflow */
+.workflow-container {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.workflow-citation {
+  margin-bottom: 2rem;
+}
+
+.workflow-citation-text {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.workflow-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: nowrap; /* Maintenir les étapes sur une seule ligne */
+}
+
+.workflow-step {
+  text-align: center;
+}
+
+.step-icon {
+  padding: 10px;
+  background-color: #ffffff; /* Fond blanc pour le cercle autour de l'icône */
+  border-radius: 50%; /* Rendre l'icône ronde */
+  color: #34495e;
+}
+
+.step-title {
+  font-family: 'Cardo', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.step-description {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+
+.workflow-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.workflow-arrow svg {
+  color: #ffffff;
+}
+
+/* Contact */
+/* Contact Page Styles */
+.contact-page {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-title {
+  margin-top: 25px;
+  font-family: 'Cardo', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  font-family: 'Cardo', serif;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.8); /* Cadre blanc autour */
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+/* Container */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Étire les blocs à la même hauteur */
+  gap: 30px; /* Espacement uniforme entre les blocs */
+  margin-top: 20px;
+}
+
+/* Bloc commun pour uniformiser largeur et hauteur */
+.contact-block {
+  flex: 1; /* Tous les blocs prennent une taille égale */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Alignement interne */
+  background-color: transparent; /* Par défaut, pas de couleur */
+}
+
+/* Left section: Details */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: stretch; /* Étire les cards pour occuper toute la largeur */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 15px;
+  background: #ffffff; /* Fond blanc pour les cards */
+  border-radius: 8px;
+  transition: background 0.3s;
+  color: #34495e; /* Texte sombre pour contraster avec le fond blanc */
+}
+
+.contact-item > p {
+  font-size: 1.1rem !important; /* Augmente légèrement la taille du texte */
+}
+
+.contact-item:hover {
+  background: #e2e2e2; /* Fond légèrement gris clair au survol */
+}
+
+
+/* Map */
+.contact-map {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 400px; /* Taille maximale pour équilibrer visuellement */
+  border: none;
+  border-radius: 8px;
+}
+
+/* Right section: Form */
+.contact-right {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  color: #34495e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: none; /* Empêche le redimensionnement */
+  height: 120px; /* Augmente la hauteur */
+}
+
+.contact-form button {
+  background-color: #252a3a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ff6f61;
+}
+
+/* Forcing equal heights */
+.contact-container > .contact-block {
+  min-height: 450px; /* Définit une hauteur commune pour tous les blocs */
+}
+
+
+
+/* Portfolio */
+/* Conteneur global */
+.project-tools {
+  display: flex;
+  gap: 10px; /* Espacement entre les icônes */
+  margin-top: 10px; /* Espacement entre les outils et la description */
+}
+
+.project-tools i {
+  font-size: 1.5rem; /* Taille des icônes */
+  color: #252a3a; /* Couleur de base (bleu) */
+  transition: transform 0.3s, color 0.3s; /* Animation pour hover */
+}
+
+.project-tools i:hover {
+  color: #252a3a; /* Couleur plus sombre au survol */
+  transform: scale(1.2); /* Agrandissement au survol */
+}
+.projects {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 0 auto; /* Centre le conteneur */
+  overflow: hidden; /* Cache les éléments qui débordent */
+}
+
+/* Titre principal */
+.Portfolio_title {
+  font-family: 'Cardo', serif;
+  font-size: 2.5rem;
+  color: #252a3a;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Animation du titre */
+  font-weight: 700;
+}
+
+.Portfolio_subtitle {
+  font-family: 'Cardo', serif;
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 0.7s forwards 0.3s; /* Légèrement plus tard que le titre */
+}
+
+/* Animation fade-in pour le titre et le sous-titre */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Boutons de filtrage */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Réduit l'espace entre les boutons */
+  margin-bottom: 20px; /* Réduit la marge sous les boutons */
+}
+
+.filter-button {
+  font-size: 1rem;
+  padding: 8px 15px; /* Réduit la taille des boutons */
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #34495e;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-button.active {
+  background-color: #ff6f61;
+  color: #fff !important;
+}
+
+.filter-button:hover {
+  background-color: #ff6f61;
+  color: #fff;
+}
+
+/* Grille des projets */
+.portfolio_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Réduit la taille minimale des cartes */
+  gap: 20px; /* Réduit l'espace entre les cartes */
+  justify-items: center;
+  justify-content: center; /* Centre la grille */
+  max-width: 1000px; /* Limite la largeur de la grille */
+  margin: 0 auto; /* Centre la grille horizontalement */
+  opacity: 0;
+  animation: fadeIn 0.5s forwards 0.3s; /* Animation de fade-in avec délai réduit */
+}
+
+/* Carte de projet */
+.project__container {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  max-width: 320px; /* Réduit la largeur des cartes */
+  opacity: 0; /* Initialement invisible */
+}
+
+/* Animation d'apparition des cartes avec un délai */
+.project__container.show {
+  opacity: 1;
+}
+
+/* Carte de projet survolée */
+.project__container:hover {
+  transform: translateY(-5px); /* Réduction de l'élévation au survol */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Image du projet */
+.project__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contenu du projet */
+.project__container article {
+  padding: 15px; /* Réduit le padding interne */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Réduit l'espace entre les éléments */
+}
+
+/* Titre et description */
+.project__container h3 {
+  font-family: 'Cardo', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #34495e;
+  margin: 1rem 0;
+}
+
+.project__container p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Boutons principaux */
+.main-btn {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px; /* Réduit l'espace entre les boutons */
+  margin-top: 10px;
+}
+
+.btn_project {
+  text-decoration: none;
+  font-size: 0.85rem; /* Réduit la taille des boutons */
+  color: #fff;
+  background-color: #252a3a;
+  padding: 8px 12px; /* Réduit la taille des boutons */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn_project:hover {
+  background-color: #252a3a;
+}
+
+/* Animation de disparition des projets lors du filtrage */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Animation de réapparition des nouveaux projets */
+@keyframes fadeInNewProjects {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Applique les animations aux projets */
+.project__container.hide {
+  animation: fadeOut 0.3s ease-out forwards; /* Disparaît avec fadeOut plus rapide */
+}
+
+.project__container.showNew {
+  animation: fadeInNewProjects 0.3s ease-out forwards 0s; /* Apparait immédiatement après fadeOut */
+}
+
+/* Global styles for the Tarifs component */
+.tarifs-container {
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.tarifs-title {
+  font-family: 'Cardo', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #252a3a;
+  margin-bottom: 0.5rem;
+}
+
+.tarifs-subtitle {
+  font-family: 'Cardo', serif;
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 0.7s forwards 0.3s; /* Légèrement plus tard que le titre */
+}
+
+.tarifs-cta {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 2rem;
+}
+
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1400px; /* Resserre les cartes au centre */
+  margin-top: 50px !important;
+}
+
+.tarifs-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto; /* Ajuste la hauteur dynamique selon le contenu */
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.tarifs-card:hover {
+  transform: translateY(-5px);
+}
+
+.tarifs-price {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.tarifs-price span {
+  color: #ff6f61;
+}
+
+.tarifs-btn {
+  background: #252a3a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.tarifs-btn:hover {
+  background: #ff6f61;
+}
+
+.tarifs-btn_projet {
+  display: inline-block; /* Assure que le bouton s'aligne bien sur une ligne */
+  background: #252a3a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center; /* Centre le texte à l'intérieur */
+}
+
+.tarifs-btn_projet:hover {
+  background: #ff6f61;
+}
+
+
+.tarifs-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tarifs-card ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.tarifs-card ul li:before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: #ff6f61 ;
+  font-weight: bold;
+}
+
+.tarifs-footer{
+  margin-bottom: 10px;
+}
+
+/* footer */
+
+footer {
+  background-color: #212121;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.line1, .line2{
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff; 
+}
+
+.footer_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 60px;
+}
+
+.footer_link .Icon{
+  margin-right: 10px;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  color: #f2f1ee;
+  border-radius: 50%;
+  backdrop-filter: brightness(88%);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .50s ease;
+}
+.footer_link .Icon:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #34495e;
+}
+
+/* Conteneur principal */
+.profile-status {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Statut d'abonnement */
+.profile-status span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-left: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.subscribed {
+  color: #fff;
+  background-color: #4caf50; /* Vert */
+}
+
+.unsubscribed {
+  color: #fff;
+  background-color: #e74c3c; /* Rouge */
+}
+
+.tarifs-description {
+  font-size: 16px;
+  margin-bottom: 20px; /* Augmente l'espace avant la liste */
+}
+
+.tarifs-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tarifs-list li {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  width: 100%; /* Assure un bon centrage */
+}
+
+.tarifs-extra {
+  font-size: 14px;
+  font-style: italic;
+  color: #777;
+  margin-top: 15px; /* Augmente légèrement l'espace au-dessus */
+}
+
+/* Styles généraux pour SuccessPage et CancelPage */
+.success-cancel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  padding: 20px;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Style du titre */
+.success-cancel-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Couleurs spécifiques */
+.success-title {
+  color: #16a34a; /* Vert succès */
+}
+
+.cancel-title {
+  color: #dc2626; /* Rouge annulation */
+}
+
+/* Texte descriptif */
+.success-cancel-text {
+  font-size: 1.2rem;
+  color: #374151;
+  max-width: 600px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Bouton de retour */
+.success-cancel-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.success-button {
+  background-color: #3b82f6; /* Bleu */
+}
+
+.success-button:hover {
+  background-color: #2563eb; /* Bleu foncé */
+}
+
+.cancel-button {
+  background-color: #6b7280; /* Gris */
+}
+
+.cancel-button:hover {
+  background-color: #4b5563; /* Gris foncé */
+}
+
+
+
+/* Responsive pour les petits écrans */
+@media (max-width: 1200px) {
+
+  .tarifs-title {
+    font-size: 2rem;
+  }
+
+  .tarifs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tarifs-container {
+    padding: 1rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between; /* Distribution des sections */
+    align-items: center;
+    padding: 0 1rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Centre les icônes horizontalement */
+    align-items: center;
+    gap: 1.5rem; /* Espacement entre les icônes */
+    flex: 1; /* Prend de l'espace pour pousser le menu burger à droite */
+    margin-right: 87px;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: flex-end; /* Aligne le menu burger à droite */
+    font-size: 2rem;
+    color: #34495e;
+    cursor: pointer;
+    flex: 1; /* Prend de l'espace pour aligner correctement */
+    text-align: right; /* Assure un alignement des icônes vers la droite */
+  }
+  
+  .navbar {
+    display: none; /* Cache les liens par défaut */
+  }
+  
+  #check:checked ~ .navbar {
+    display: flex;
+    flex-direction: column; /* Affiche les liens en colonne */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%; /* Prend toute la largeur */
+    background: rgba(242, 241, 238, 0.95); /* Fond semi-transparent */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    z-index: 99;
+  }
+  
+  #check:checked ~ .menu #icon-menu {
+    display: none;
+  }
+  
+  #check:checked ~ .menu #close-menu {
+    display: block;
+  }
+  
+  .menu #close-menu {
+    display: none;
+  }
+  
+  .navbar a {
+    margin: 0;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Séparation entre les liens */
+    color: #191818;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  
+  .navbar a:hover {
+    color: #34495e;
+  }
+   /* Tablette */
+   .workflow-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .workflow-citation-text {
+    font-size: 1.5rem;
+  }
+
+  .workflow-steps {
+    gap: 2rem; /* Réduire l'espace entre les étapes pour tout ajuster sur une seule ligne */
+  }
+
+  .step-icon {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .step-title {
+    font-size: 1.15rem;
+  }
+
+  .step-description {
+    font-size: 0.9rem;
+  }
+
+  .workflow-arrow svg {
+    width: 25px;
+    height: 25px;
+  }
+  /* Tablette */
+  .contact-container {
+    flex-wrap: wrap; /* Permet de passer à une nouvelle ligne */
+    gap: 20px;
+  }
+
+  .contact-details {
+    gap: 30px;
+  }
+
+  .contact-left,
+  .contact-map {
+    flex: 1 1 calc(50% - 10px); /* Les détails et la carte prennent chacun la moitié */
+  }
+
+  .contact-right {
+    flex: 1 1 100%; /* Le formulaire prend toute la largeur */
+  }
+
+  .contact-map iframe {
+    max-width: 100%; /* S'adapte à la largeur disponible */
+    height: 300px; /* Ajuste la hauteur pour un meilleur rendu */
+  }
+  .about-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-text,
+  .about-image {
+    max-width: 90%;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .Portfolio_title {
+    font-size: 2rem;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .tarifs-btn_projet {
+    font-size: 0.9rem; /* Réduit légèrement la taille de la police */
+    padding: 0.4rem 0.8rem; /* Diminue le padding pour les petits écrans */
+    margin-top: 10px; /* Ajuste la marge */
+  }
+  .tarifs-title {
+    font-size: 2rem;
+  }
+
+  .tarifs-cta {
+    font-size: 0.8rem;
+  }
+
+  .tarifs-card {
+    padding: 1rem;
+  }
+
+  .tarifs-price {
+    font-size: 1.2rem;
+  }
+  .project-tools {
+    justify-content: center; /* Centrer les icônes sur mobile */
+  }
+
+  .project-tools i {
+    font-size: 1.2rem; /* Réduction de la taille sur mobile */
+  }
+  /* Téléphone */
+  .workflow-container {
+    padding: 2rem 1rem;
+  }
+
+  .workflow-citation-text {
+    font-size: 1.5rem;
+  }
+
+  .workflow-steps {
+    flex-direction: column; /* Empiler les étapes en colonne */
+    gap: 2rem;
+  }
+
+  .workflow-arrow {
+    transform: rotate(90deg); /* Faire pivoter la flèche pour la rendre verticale */
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+  }
+
+  .step-title {
+    font-size: 1.5rem;
+  }
+
+  .step-description {
+    font-size: 1.1rem;
+  }
+
+  .workflow-arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+/* Téléphone */
+.contact-container {
+  flex-direction: column; /* Les sections s'empilent verticalement */
+  gap: 20px;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1 1 100%; /* Chaque section occupe toute la largeur */
+}
+
+.contact-map iframe {
+  width: 100%; /* Assure que la carte occupe toute la largeur */
+  height: 300px; /* Ajuste la hauteur pour une meilleure visibilité */
+}
+
+.contact-item {
+  padding: 10px; /* Réduit l'espacement interne */
+}
+
+.contact-item > p {
+  font-size: 1rem; /* Ajuste la taille du texte */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  font-size: 1.1rem; /* Augmente légèrement la taille des champs et du bouton */
+}
+
+.contact-title {
+  font-size: 2rem;
+}
+.about-container {
+  padding: 20px 5%;
+}
+
+.about-header h1 {
+  font-size: 2rem;
+}
+
+.about-header h2 {
+  font-size: 1rem;
+}
+
+.header-underline {
+  width: 60px;
+  height: 3px;
+}
+
+.about-content {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.about-image img {
+  width: 80%; /* Slightly reduce size for better fit */
+}
+
+.about-stats {
+margin-bottom: 20px;}
+
+.stat-item {
+  min-width: auto; /* Remove fixed minimum width */
+  margin: 0 auto;
+}
+
+.citation-container {
+  padding: 1.5rem; /* Réduit davantage le padding pour les très petits écrans */
+  max-width: 100%; /* Utilise toute la largeur de l'écran */
+}
+
+.citation-text {
+  font-size: 1.2rem; /* Diminue encore la taille pour les téléphones */
+}
+
+.citation-author {
+  font-size: 1rem; /* Adapte l'auteur pour les écrans étroits */
+}
+}
+
+/* Responsive Tablettes : Hauteur <= 768px */
+@media (max-height: 768px) {
+  .scroll-arrow {
+    padding: 8px; /* Réduit la zone cliquable */
+    animation: bounce 2s infinite; /* Allonge légèrement l'animation */
+  }
+
+  .arrow-icon {
+    font-size: 40px; /* Réduction de la taille de la flèche */
+  }
+
+  .myself {
+    flex-direction: row; /* Dispose les éléments en ligne sur les tablettes */
+    gap: 20px; /* Ajoute un espacement entre les éléments */
+  }
+
+  .Me {
+    width: 80%; /* Ajuste la largeur pour mieux s'adapter */
+  }
+  .header {
+    height: 50px;
+  }
+  #check:checked ~ .navbar {
+    top: 50px; /* Sous la barre de navigation */
+  }
+  .logo-image {
+    max-height: 50px; /* Contraint la taille maximale du logo à la hauteur de la barre */
+  }
+}
+
+/* Responsive Smartphones : Hauteur <= 480px */
+@media (max-height: 480px) {
+  .scroll-arrow {
+    padding: 5px; /* Réduit davantage la zone cliquable */
+    animation: bounce 2.5s infinite; /* Animation plus lente */
+    position: relative; /* Permet de positionner la flèche par rapport à l'image */
+    top: -20px; /* Place la flèche au-dessus ou proche de l'image */
+  }
+
+  .arrow-icon {
+    font-size: 30px; /* Taille réduite de la flèche */
+  }
+
+  .myself {
+    flex-direction: column; /* Retour à une disposition en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    gap: 10px; /* Réduit l'espacement entre les éléments */
+  }
+
+  .Me {
+    width: 100%; /* Réduit la largeur de l'image pour mieux s'adapter */
+    max-width: 300px; /* Fixe une largeur maximale */
+    height: auto; /* Garde les proportions de l'image */
+    margin: 0 auto; /* Centre l'image horizontalement */
+  }
+  .header {
+    height: 50px;
+  }
+  #check:checked ~ .navbar {
+    top: 50px; /* Sous la barre de navigation */
+  }
+  .logo-image {
+    max-height: 50px; /* Contraint la taille maximale du logo à la hauteur de la barre */
+  }
+}
+
+
